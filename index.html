@@ -7,6 +7,7 @@
 		<title>沽源</title>
 
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/tinyscrollbar.css" />
 		<!-- HTML5 Shim and IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -21,9 +22,9 @@
 	</head>
 	<body>
 		<div class="welcome-wrap">
-			<div id="flashContent">
-				<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1200" height="900" id="welcome" align="middle">
-					<param name="movie" value="images/welcome.swf" />
+			<div id="welcome">
+				<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1600" height="900" id="welcome-flash" name="welcome-flash" align="middle">
+					<param name="movie" value="images/welcome.swf?v=1" />
 					<param name="quality" value="high" />
 					<param name="bgcolor" value="#ffffff" />
 					<param name="play" value="true" />
@@ -33,9 +34,8 @@
 					<param name="menu" value="true" />
 					<param name="devicefont" value="false" />
 					<param name="salign" value="" />
-					<param name="allowScriptAccess" value="sameDomain" />
 					<!--[if !IE]>-->
-					<object type="application/x-shockwave-flash" data="images/welcome.swf" width="1200" height="900">
+					<object type="application/x-shockwave-flash" data="images/welcome.swf" width="1600" height="900">
 						<param name="movie" value="mages/welcome.swf" />
 						<param name="quality" value="high" />
 						<param name="bgcolor" value="#ffffff" />
@@ -46,16 +46,238 @@
 						<param name="menu" value="true" />
 						<param name="devicefont" value="false" />
 						<param name="salign" value="" />
-						<param name="allowScriptAccess" value="sameDomain" />
 						<!--<![endif]-->
 						<a href="http://www.adobe.com/go/getflash"> <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获得 Adobe Flash Player" /> </a>
 						<!--[if !IE]>-->
 					</object>
 					<!--<![endif]-->
 				</object>
+				<div class="point-wrap">
+					
+					<a class="point point-1" data-target="#pop-panel-1" href="javascript:void(0);"></a>
+					<a class="point point-2" data-target="#pop-panel-2" href="javascript:void(0);"></a>
+					<a class="point point-3" data-target="#pop-panel-3" href="javascript:void(0);"></a>
+					<a class="point point-4" data-target="#pop-panel-4" href="javascript:void(0);"></a>
+					<a class="point point-5" data-target="#pop-panel-5" href="javascript:void(0);"></a>
+					<a class="point point-6" data-target="#pop-panel-6" href="javascript:void(0);"></a>
+					<a class="point point-7" data-target="#pop-panel-7" href="javascript:void(0);"></a>
+					<a class="point point-8" data-target="#pop-panel-8" href="javascript:void(0);"></a>
+					
+					<div class="pop-panel" id="pop-panel-1">
+						<span class="close"></span>
+						<div class="col-left">
+							<img src="images/titlepic.png" />
+						</div>
+						<div class="col-right">
+							<h3>滦河神韵</h3>
+							<div class="scrollbar-container">
+    							<div class="scrollbar">
+    								<div class="track">
+    									<div class="thumb">
+    										<div class="end">
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="viewport">
+        							<div class="overview">
+										<p>
+											滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元    滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南东有转佛庙， 西望草原湖，遥遥相对的是元    滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元  滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pop-panel" id="pop-panel-2">
+						<span class="close"></span>
+						<div class="col-left">
+							<img src="images/titlepic.png" />
+						</div>
+						<div class="col-right">
+							<h3>锡林郭勒</h3>
+							<div class="scrollbar-container">
+    							<div class="scrollbar">
+    								<div class="track">
+    									<div class="thumb">
+    										<div class="end">
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="viewport">
+        							<div class="overview">
+										<p>
+											锡林郭勒系蒙古语，意为丘陵地带的母亲河。位于内蒙古自治区锡林浩特盟境内，面积107.86万公顷，1985年经内蒙古自治区人民政府批准建立，1987年被联合国教科文组织接纳为“国际生物圈保护区”网络成员，1997年晋升为国家级，主要保护对象为草甸草原、典型草原、沙地疏林草原和河谷湿地生态系统。是世界闻名的大草原之一，也是我国四大草原——内蒙古草原的主要天然草场。
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pop-panel" id="pop-panel-3">
+						<span class="close"></span>
+						<div class="col-left">
+							<img src="images/titlepic.png" />
+						</div>
+						<div class="col-right">
+							<h3>锡林郭勒</h3>
+							<div class="scrollbar-container">
+    							<div class="scrollbar">
+    								<div class="track">
+    									<div class="thumb">
+    										<div class="end">
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="viewport">
+        							<div class="overview">
+										<p>
+											锡林郭勒系蒙古语，意为丘陵地带的母亲河。位于内蒙古自治区锡林浩特盟境内，面积107.86万公顷，1985年经内蒙古自治区人民政府批准建立，1987年被联合国教科文组织接纳为“国际生物圈保护区”网络成员，1997年晋升为国家级，主要保护对象为草甸草原、典型草原、沙地疏林草原和河谷湿地生态系统。是世界闻名的大草原之一，也是我国四大草原——内蒙古草原的主要天然草场。
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pop-panel" id="pop-panel-4">
+						<span class="close"></span>
+						<div class="col-left">
+							<img src="images/titlepic.png" />
+						</div>
+						<div class="col-right">
+							<h3>滦河神韵</h3>
+							<div class="scrollbar-container">
+    							<div class="scrollbar">
+    								<div class="track">
+    									<div class="thumb">
+    										<div class="end">
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="viewport">
+        							<div class="overview">
+										<p>
+											滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元    滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南东有转佛庙， 西望草原湖，遥遥相对的是元    滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元  滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pop-panel" id="pop-panel-5">
+						<span class="close"></span>
+						<div class="col-left">
+							<img src="images/titlepic.png" />
+						</div>
+						<div class="col-right">
+							<h3>锡林郭勒</h3>
+							<div class="scrollbar-container">
+    							<div class="scrollbar">
+    								<div class="track">
+    									<div class="thumb">
+    										<div class="end">
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="viewport">
+        							<div class="overview">
+										<p>
+											锡林郭勒系蒙古语，意为丘陵地带的母亲河。位于内蒙古自治区锡林浩特盟境内，面积107.86万公顷，1985年经内蒙古自治区人民政府批准建立，1987年被联合国教科文组织接纳为“国际生物圈保护区”网络成员，1997年晋升为国家级，主要保护对象为草甸草原、典型草原、沙地疏林草原和河谷湿地生态系统。是世界闻名的大草原之一，也是我国四大草原——内蒙古草原的主要天然草场。
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pop-panel" id="pop-panel-6">
+						<span class="close"></span>
+						<div class="col-left">
+							<img src="images/titlepic.png" />
+						</div>
+						<div class="col-right">
+							<h3>锡林郭勒</h3>
+							<div class="scrollbar-container">
+    							<div class="scrollbar">
+    								<div class="track">
+    									<div class="thumb">
+    										<div class="end">
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="viewport">
+        							<div class="overview">
+										<p>
+											锡林郭勒系蒙古语，意为丘陵地带的母亲河。位于内蒙古自治区锡林浩特盟境内，面积107.86万公顷，1985年经内蒙古自治区人民政府批准建立，1987年被联合国教科文组织接纳为“国际生物圈保护区”网络成员，1997年晋升为国家级，主要保护对象为草甸草原、典型草原、沙地疏林草原和河谷湿地生态系统。是世界闻名的大草原之一，也是我国四大草原——内蒙古草原的主要天然草场。
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pop-panel" id="pop-panel-7">
+						<span class="close"></span>
+						<div class="col-left">
+							<img src="images/titlepic.png" />
+						</div>
+						<div class="col-right">
+							<h3>滦河神韵</h3>
+							<div class="scrollbar-container">
+    							<div class="scrollbar">
+    								<div class="track">
+    									<div class="thumb">
+    										<div class="end">
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="viewport">
+        							<div class="overview">
+										<p>
+											滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元    滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南东有转佛庙， 西望草原湖，遥遥相对的是元    滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元  滦河神韵风景区位于沽源县城东北二十公里处 北依转佛山南临茫茫金莲川大草原，东有转佛庙， 西望草原湖，遥遥相对的是元
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pop-panel" id="pop-panel-8">
+						<span class="close"></span>
+						<div class="col-left">
+							<img src="images/titlepic.png" />
+						</div>
+						<div class="col-right">
+							<h3>锡林郭勒</h3>
+							<div class="scrollbar-container">
+    							<div class="scrollbar">
+    								<div class="track">
+    									<div class="thumb">
+    										<div class="end">
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="viewport">
+        							<div class="overview">
+										<p>
+											锡林郭勒系蒙古语，意为丘陵地带的母亲河。位于内蒙古自治区锡林浩特盟境内，面积107.86万公顷，1985年经内蒙古自治区人民政府批准建立，1987年被联合国教科文组织接纳为“国际生物圈保护区”网络成员，1997年晋升为国家级，主要保护对象为草甸草原、典型草原、沙地疏林草原和河谷湿地生态系统。是世界闻名的大草原之一，也是我国四大草原——内蒙古草原的主要天然草场。
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<div id="jquery_jplayer_1"></div><!--播放音频的flash隐藏窗口-->
 		<script type="text/javascript" src="script/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="script/jquery.tinyscrollbar.js"></script>
+		<script type="text/javascript" src="jPlayer/jquery.jplayer.min.js"></script>
 		<script type="text/javascript" src="script/function.js"></script>
 	</body>
 </html>
