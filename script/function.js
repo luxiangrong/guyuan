@@ -29,18 +29,25 @@ function getSWF(movieName) {
 			pageInit();
 
 			var lastPoint;
+			
+			$(".point").on('mouseup', function(e){
+				e.stopPropagation();
+			});
 
-			$(".point").on('click mouseup', function(e) {
-				
+			$(".point").on('click', function(e) {
 				if(lastPoint) {
 					$(lastPoint.attr("data-target")).hide();
 					$(lastPoint.attr('data-media')).jPlayer('stop');
+					
+					$(".point").removeClass('active');
 				}
 
 				var $this = $(this);
 				lastPoint = $this;
 				var target = $($this.attr("data-target"));
 
+				$this.addClass('active');
+				
 				target.css('left', $this.position().left - 300);
 				target.css('top', $this.position().top - 165);
 
@@ -48,6 +55,7 @@ function getSWF(movieName) {
 				target.find('.scrollbar-container').tinyscrollbar();
 
 				target.find('.close').on('click', function() {
+					$this.removeClass('active');
 					target.hide();
 					switchToBgSound($this.attr('data-media'));
 				});
@@ -59,6 +67,7 @@ function getSWF(movieName) {
 				});
 
 				$("body").off('mouseup').on('mouseup', function(e) {
+					$this.removeClass('active');
 					target.hide();
 					switchToBgSound($this.attr('data-media'));
 				});
@@ -76,7 +85,7 @@ function getSWF(movieName) {
 					},
 					play: function() {
 					    $(this).jPlayer("pauseOthers"); // pause all players except this one.
-					 },
+					},
 					swfPath : "jPlayer",
 					supplied : "mp3"
 				});

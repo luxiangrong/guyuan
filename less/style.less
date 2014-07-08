@@ -73,25 +73,35 @@ body {
   }
   .point {
     position: absolute;
-    width: 27px;
-    height: 27px; 
+    width: 21px;
+    height: 40px; 
     display: block;
-    background: url(../images/point_off.png) center center no-repeat;
-    transition: all 1s ease;
-    &:hover {
-      background: url(../images/point_on.png);
+    background: url(../images/point.png) center 9px no-repeat;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    &:hover,
+    &.active {
+      background-position: center 0px;
+    }
+    .shandow {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(../images/point_shadow.png) center 36px no-repeat;
     }
     &.point-1 {
-      left: 440px;
-      top: 370px;
+      left: 480px;
+      top: 360px;
     }
     &.point-2 {
-      left: 540px;
-      top: 325px;
+      left: 550px;
+      top: 305px;
     }
     &.point-3 {
-      left: 740px;
-      top: 265px;
+      left: 680px;
+      top: 275px;
     }
     &.point-4 {
       left: 810px;
@@ -99,19 +109,19 @@ body {
     }
     &.point-5 {
       left: 830px;
-      top: 300px;
+      top: 305px;
     }
     &.point-6 {
-      left: 950px;
-      top: 300px;
+      left: 943px;
+      top: 280px;
     }
     &.point-7 {
-      left: 900px;
-      top: 370px;
+      left: 915px;
+      top: 355px;
     }
     &.point-8 {
-      left: 1100px;
-      top: 320px;
+      left: 1120px;
+      top: 300px;
     }
   }
 }
