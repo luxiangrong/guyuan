@@ -1,89 +1,106 @@
 //jQuery.noConflict();
-var jsReady=false;
-var swfReady=false;
+var jsReady = false;
+var swfReady = false;
 
-function isReady(){
+function isReady() {
 	return jsReady;
 }
 
-function setSwfIsReady(){
-   swfReady=true;
-
+function setSwfIsReady() {
+	swfReady = true;
 }
 
-function pageInit(){
-     jsReady=true;
+function pageInit() {
+	jsReady = true;
 }
 
-function getSWF(movieName) 
-{ 
-    if (navigator.appName.indexOf("Microsoft") != -1) 
-    { 
-        return window[movieName]; 
-    } 
-    else 
-    { 
-        return document[movieName]; 
-    } 
-} 
-
+function getSWF(movieName) {
+	if(navigator.appName.indexOf("Microsoft Internet") == -1) {
+		if(document.embeds && document.embeds[movieName + "-noie"])
+			return document.embeds[movieName + "-noie"];
+	} else {
+		return document.getElementById(movieName);
+	}
+}
 
 (function($) {
 	$(function() {
-		$(document).ready(function(){
+		$(document).ready(function() {
 			pageInit();
-		});
-		
-		function hello(msg) {
-			alert(msg);
-		}
-		
-		
-		$(".point").click(function(e){
-			
-			var $this = $(this);
-			var target = $($this.attr("data-target"));
-			
-			target.css('left', $this.position().left - 300);
-			target.css('top', $this.position().top - 165);
-			
-			target.show();
-			target.find('.scrollbar-container').tinyscrollbar();
-			
-			
-			target.find('.close').on('click', function(){
-				target.hide();
-				getSWF('welcome-flash').resumePlaySound();
-				$("#jquery_jplayer_1").jPlayer('stop');
-			});
-			
-			target.on('click', function(e){
+
+			var lastPoint;
+
+			$(".point").on('click mouseup', function(e) {
+				
+				if(lastPoint) {
+					$(lastPoint.attr("data-target")).hide();
+					$(lastPoint.attr('data-media')).jPlayer('stop');
+				}
+
+				var $this = $(this);
+				lastPoint = $this;
+				var target = $($this.attr("data-target"));
+
+				target.css('left', $this.position().left - 300);
+				target.css('top', $this.position().top - 165);
+
+				target.show();
+				target.find('.scrollbar-container').tinyscrollbar();
+
+				target.find('.close').on('click', function() {
+					target.hide();
+					switchToBgSound($this.attr('data-media'));
+				});
+
 				e.stopPropagation();
+
+				target.off('click mouseup').on('click mouseup', function(e) {
+					e.stopPropagation();
+				});
+
+				$("body").off('mouseup').on('mouseup', function(e) {
+					target.hide();
+					switchToBgSound($this.attr('data-media'));
+				});
+
+				switchToIntro($this.attr('data-media'));
+
 			});
-			e.stopPropagation();
-			$("body").off('click').on('click', function(e){
-				target.hide();
+
+			$(".intro").each(function(index,item){
+				$(item).jPlayer({
+					ready : function() {
+						$(this).jPlayer("setMedia", {
+							mp3 : $(item).attr('data-media')
+						});
+					},
+					play: function() {
+					    $(this).jPlayer("pauseOthers"); // pause all players except this one.
+					 },
+					swfPath : "jPlayer",
+					supplied : "mp3"
+				});
+			});
+
+			function switchToIntro(selector) {
+				getSWF('welcome-flash').stopPlaySound();
+				$(selector).jPlayer('play');
+				// $(selector).jPlayer({
+					// ready : function() {
+						// $(this).jPlayer("setMedia", {
+							// mp3 : $(selector).attr('data-media')
+						// }).jPlayer('play');
+					// },
+					// swfPath : "jPlayer",
+					// supplied : "mp3"
+				// });
+			}
+
+			function switchToBgSound(selector) {
 				getSWF('welcome-flash').resumePlaySound();
-				$("#jquery_jplayer_1").jPlayer('stop');
-			});
-			
-			$("#jquery_jplayer_1").jPlayer('play');
-			
-			getSWF('welcome-flash').stopPlaySound();
+				$(selector).jPlayer('stop');
+			}
+
 		});
-		
-		$("#jquery_jplayer_1").jPlayer(
-			{
-				ready: function () {
-					$(this).jPlayer("setMedia", {
-						mp3: "media/small_apple.mp3",  m4a: "media/small_apple.mp4",  oga: "media/small_apple.ogg"
-		      		});
-    			},
-   				swfPath: "jPlayer",
-   				supplied: "mp3, m4a, oga"
-  			}
-  		);
-  		
-  		
 	});
 })(jQuery);

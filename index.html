@@ -23,8 +23,8 @@
 	<body>
 		<div class="welcome-wrap">
 			<div id="welcome">
-				<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1600" height="900" id="welcome-flash" name="welcome-flash" align="middle">
-					<param name="movie" value="images/welcome.swf?v=1" />
+				<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1600" height="900" id="welcome-flash" align="middle">
+					<param name="movie" value="images/welcome.swf" />
 					<param name="quality" value="high" />
 					<param name="bgcolor" value="#ffffff" />
 					<param name="play" value="true" />
@@ -34,34 +34,41 @@
 					<param name="menu" value="true" />
 					<param name="devicefont" value="false" />
 					<param name="salign" value="" />
+					<param name="AllowScriptAccess" value="always" />
 					<!--[if !IE]>-->
-					<object type="application/x-shockwave-flash" data="images/welcome.swf" width="1600" height="900">
-						<param name="movie" value="mages/welcome.swf" />
-						<param name="quality" value="high" />
-						<param name="bgcolor" value="#ffffff" />
-						<param name="play" value="true" />
-						<param name="loop" value="true" />
-						<param name="wmode" value="transparent" />
-						<param name="scale" value="showall" />
-						<param name="menu" value="true" />
-						<param name="devicefont" value="false" />
-						<param name="salign" value="" />
-						<!--<![endif]-->
-						<a href="http://www.adobe.com/go/getflash"> <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获得 Adobe Flash Player" /> </a>
-						<!--[if !IE]>-->
-					</object>
+					<embed play="true" 
+						id="welcome-flash-noie"
+						swliveconnect="true" 
+						
+						src="images/welcome.swf" 
+						quality="high" 
+						bgcolor="#FFFFFF" 
+						width="1600" 
+						height="900" 
+						type="application/x-shockwave-flash" 
+						swliveconnect="true"
+						wmode="transparent"
+						AllowScriptAccess="always"
+						pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+					/>
 					<!--<![endif]-->
 				</object>
+				<div class="header">
+					<div class="logo">
+						<img src="images/logo.png" />
+					</div>
+					<h3>最美湿地 生态沽源</h3>
+				</div>
 				<div class="point-wrap">
 					
-					<a class="point point-1" data-target="#pop-panel-1" href="javascript:void(0);"></a>
-					<a class="point point-2" data-target="#pop-panel-2" href="javascript:void(0);"></a>
-					<a class="point point-3" data-target="#pop-panel-3" href="javascript:void(0);"></a>
-					<a class="point point-4" data-target="#pop-panel-4" href="javascript:void(0);"></a>
-					<a class="point point-5" data-target="#pop-panel-5" href="javascript:void(0);"></a>
-					<a class="point point-6" data-target="#pop-panel-6" href="javascript:void(0);"></a>
-					<a class="point point-7" data-target="#pop-panel-7" href="javascript:void(0);"></a>
-					<a class="point point-8" data-target="#pop-panel-8" href="javascript:void(0);"></a>
+					<a class="point point-1" data-target="#pop-panel-1" data-media="#intro-1" href="javascript:void(0);"></a>
+					<a class="point point-2" data-target="#pop-panel-2" data-media="#intro-2" href="javascript:void(0);"></a>
+					<a class="point point-3" data-target="#pop-panel-3" data-media="#intro-3" href="javascript:void(0);"></a>
+					<a class="point point-4" data-target="#pop-panel-4" data-media="#intro-4" href="javascript:void(0);"></a>
+					<a class="point point-5" data-target="#pop-panel-5" data-media="#intro-5" href="javascript:void(0);"></a>
+					<a class="point point-6" data-target="#pop-panel-6" data-media="#intro-6" href="javascript:void(0);"></a>
+					<a class="point point-7" data-target="#pop-panel-7" data-media="#intro-7" href="javascript:void(0);"></a>
+					<a class="point point-8" data-target="#pop-panel-8" data-media="#intro-8" href="javascript:void(0);"></a>
 					
 					<div class="pop-panel" id="pop-panel-1">
 						<span class="close"></span>
@@ -272,9 +279,20 @@
 						</div>
 					</div>
 				</div>
+				<div class="footer">
+					<a class="enter" href="">进入网站</a>
+					<p class="copyright">沽源旅游网官方网站©2007-2013,All right Reserved. [京ICP备08006814]</p>
+				</div>
 			</div>
 		</div>
-		<div id="jquery_jplayer_1"></div><!--播放音频的flash隐藏窗口-->
+		<div class="intro" id="intro-1" data-media="http://mp3.9ku.com/mp3/642/641022.mp3"></div>
+		<div class="intro" id="intro-2" data-media="media/intro-2.mp3"></div>
+		<div class="intro" id="intro-3" data-media="http://mp3.9ku.com/mp3/81/80753.mp3"></div>
+		<div class="intro" id="intro-4" data-media="http://mp3.9ku.com/mp3/79/78347.mp3"></div>
+		<div class="intro" id="intro-5" data-media="http://mp3.9ku.com/mp3/411/410254.mp3"></div>
+		<div class="intro" id="intro-6" data-media="http://mp3.9ku.com/mp3/367/366825.mp3"></div>
+		<div class="intro" id="intro-7" data-media="http://mp3.9ku.com/mp3/410/409278.mp3"></div>
+		<div class="intro" id="intro-8" data-media="media/intro-1.mp3"></div>
 		<script type="text/javascript" src="script/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="script/jquery.tinyscrollbar.js"></script>
 		<script type="text/javascript" src="jPlayer/jquery.jplayer.min.js"></script>
