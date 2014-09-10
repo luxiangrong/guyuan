@@ -34,8 +34,11 @@ function getSWF(movieName) {
 				e.stopPropagation();
 			});
 
-			$(".point").on('click', function(e) {
+			$(".point").on('mouseenter', function(e) {
 				if(lastPoint) {
+					if(lastPoint.attr('data-target') == $(this).attr('data-target')) {
+						return;
+					}
 					$(lastPoint.attr("data-target")).hide();
 					$(lastPoint.attr('data-media')).jPlayer('stop');
 					
@@ -45,11 +48,16 @@ function getSWF(movieName) {
 				var $this = $(this);
 				lastPoint = $this;
 				var target = $($this.attr("data-target"));
-
+				
 				$this.addClass('active');
 				
-				target.css('left', $this.position().left - 300);
-				target.css('top', $this.position().top - 165);
+				if($(this).attr('data-media') == '#intro-4') {
+					target.css('left', $this.position().left - 270);
+					target.css('top', $this.position().top - 115);
+				} else {
+					target.css('left', $this.position().left - 300);
+					target.css('top', $this.position().top - 165);
+				}
 
 				target.show();
 				target.find('.scrollbar-container').tinyscrollbar();
@@ -58,6 +66,7 @@ function getSWF(movieName) {
 					$this.removeClass('active');
 					target.hide();
 					switchToBgSound($this.attr('data-media'));
+					lastPoint = false;
 				});
 
 				e.stopPropagation();
@@ -70,6 +79,7 @@ function getSWF(movieName) {
 					$this.removeClass('active');
 					target.hide();
 					switchToBgSound($this.attr('data-media'));
+					lastPoint = false;
 				});
 
 				switchToIntro($this.attr('data-media'));
