@@ -403,6 +403,7 @@ body {
 .welcome-wrap .footer .enter {
   display: block;
   margin: 0 auto;
+  margin-bottom: 75px;
   width: 5em;
   background: url(../images/icon_enter.png) no-repeat left center;
   padding-left: 30px;
@@ -459,7 +460,7 @@ body {
 .welcome-wrap .point.point-3 {
   height: 50px;
   left: 645px;
-  top: 260px;
+  top: 215px;
   width: 159px;
 }
 .welcome-wrap .point.point-4 {
