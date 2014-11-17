@@ -493,6 +493,12 @@ body {
   top: 300px;
   width: 70px;
 }
+.welcome-wrap .point.point-9 {
+  height: 38px;
+  left: 646px;
+  top: 268px;
+  width: 163px;
+}
 .pop-panel {
   display: none;
   position: absolute;
