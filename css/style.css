@@ -435,7 +435,6 @@ body {
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
-  border: 1px solid red;
 }
 .welcome-wrap .point:hover,
 .welcome-wrap .point.active {
