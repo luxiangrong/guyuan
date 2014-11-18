@@ -435,6 +435,7 @@ body {
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
+  border: 1px solid red;
 }
 .welcome-wrap .point:hover,
 .welcome-wrap .point.active {
@@ -458,10 +459,10 @@ body {
   width: 139px;
 }
 .welcome-wrap .point.point-3 {
-  height: 50px;
-  left: 645px;
-  top: 215px;
-  width: 159px;
+  height: 90px;
+  left: 568px;
+  top: 175px;
+  width: 220px;
 }
 .welcome-wrap .point.point-4 {
   height: 100px;
