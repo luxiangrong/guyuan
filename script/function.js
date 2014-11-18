@@ -54,6 +54,9 @@ function getSWF(movieName) {
 				if($(this).attr('data-media') == '#intro-4') {
 					target.css('left', $this.position().left - 270);
 					target.css('top', $this.position().top - 115);
+				} else if($(this).attr('data-media') == '#intro-3') {
+					target.css('left', $this.position().left - 230);
+					target.css('top', $this.position().top - 115);
 				} else {
 					target.css('left', $this.position().left - 300);
 					target.css('top', $this.position().top - 165);
